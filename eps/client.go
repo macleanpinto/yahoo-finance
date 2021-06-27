@@ -15,8 +15,11 @@ func GetEpsHistory(symbol string) ([]*History, error) {
 		err = finance.CreateRemoteError(err)
 		return nil, err
 	}
-
-	if resp.StatusCode >= 400 {
+	if resp.StatusCode == 400 {
+		//Return nil means symbol does not exist
+		return nil, nil
+	}
+	if resp.StatusCode > 400 {
 		err = finance.CreateRemoteErrorS("error response recieved from upstream api")
 		return nil, err
 	}
