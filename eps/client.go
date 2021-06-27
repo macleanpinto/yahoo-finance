@@ -9,7 +9,7 @@ import (
 )
 
 // Earning history for the most recent four quarters.
-func getEpsHistory(symbol string) ([]*History, error) {
+func GetEpsHistory(symbol string) ([]*History, error) {
 	resp, err := http.Get(finance.YFinURL + "/v10/finance/quoteSummary/" + symbol + "?modules=earningsHistory")
 	if err != nil {
 		err = finance.CreateRemoteError(err)

@@ -8,12 +8,12 @@ import (
 )
 
 func TestGetEpsHistory(t *testing.T) {
-	response, err := getEpsHistory("RELIANCE.NS")
+	response, err := GetEpsHistory("RELIANCE.NS")
 	assert.Nil(t, err)
 	assert.NotNil(t, response)
 }
 func TestGetEpsHistoryBadQuote(t *testing.T) {
-	response, err := getEpsHistory("CRAP.NS")
+	response, err := GetEpsHistory("CRAP.NS")
 	assert.NotNil(t, err)
 	assert.Nil(t, response)
 	assert.Equal(t, finance.CreateRemoteErrorS("error response recieved from upstream api"), err)
