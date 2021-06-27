@@ -1,4 +1,4 @@
-package earning
+package eps
 
 import (
 	"encoding/json"
