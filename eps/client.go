@@ -51,26 +51,26 @@ type History struct {
 	EpsActual struct {
 		Raw float64 `json:"raw"`
 		Fmt string  `json:"fmt"`
-	} `json:"epsActual"`
+	} `json:"epsActual,omitempty"`
 	EpsEstimate struct {
 		Raw float64 `json:"raw"`
 		Fmt string  `json:"fmt"`
-	} `json:"epsEstimate"`
+	} `json:"epsEstimate,omitempty"`
 
 	EpsDifference struct {
 		Raw float64 `json:"raw"`
 		Fmt string  `json:"fmt"`
-	} `json:"epsDifference"`
+	} `json:"epsDifference,omitempty"`
 
 	SurprisePercent struct {
 		Raw float64 `json:"raw"`
 		Fmt string  `json:"fmt"`
-	} `json:"surprisePercent"`
+	} `json:"surprisePercent,omitempty"`
 
 	Quarter struct {
 		Raw float64 `json:"raw"`
 		Fmt string  `json:"fmt"`
-	} `json:"quarter"`
+	} `json:"quarter,omitempty"`
 }
 
 type Result struct {

@@ -18,3 +18,10 @@ func TestGetEpsHistoryBadQuote(t *testing.T) {
 	assert.Nil(t, response)
 	assert.Equal(t, finance.CreateRemoteErrorS("error response recieved from upstream api"), err)
 }
+
+func TestGetEpsHistoryBadResponse(t *testing.T) {
+	response, err := GetEpsHistory("WBK")
+	assert.NotNil(t, err)
+	assert.Nil(t, response)
+	assert.Equal(t, finance.CreateRemoteErrorS("error response recieved from upstream api"), err)
+}
